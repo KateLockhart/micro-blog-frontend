@@ -1,18 +1,16 @@
-import { Post } from "./Post";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-const posts = {
-  post1: "./posts/test.md",
-  post2: "./posts/test2.md",
-  post3: "./posts/test3.md",
-};
+import { HomeView } from "./views/HomeView";
+import { PostView } from "./views/PostView";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      {Object.values(posts).map((url) => {
-        return <Post key={url} postUrl={url} />;
-      })}
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="post/:postId" element={<PostView />} />
+      </Routes>
     </div>
   );
 }
