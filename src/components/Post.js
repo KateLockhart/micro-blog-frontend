@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import { useEffect, useState } from "react";
-import PostNotFound from "./errors/postNotFound.md";
+import PostNotFound from "../errors/postNotFound.md";
 
 export const Post = ({ postUrl }) => {
   const url = `${process.env.PUBLIC_URL}${postUrl}`;
